@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "packages/package-a" },
+    { "path": "packages/package-b" },
+    { "path": "packages/package-c" }
+  ]
+}

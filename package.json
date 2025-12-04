@@ -1,0 +1,9 @@
+{
+  "name": "tsgo-monorepo-issue",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20250604",
+    "typescript": "^5.8.3"
+  }
+}
