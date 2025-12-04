@@ -1,6 +1,6 @@
 # tsgo-monorepo-issue
 
-Minimal reproduction for a tsgo (TypeScript Go) TS2742 error in monorepos with project references.
+Minimal reproduction for a tsgo TS2742 error in monorepos with project references.
 
 ## Reproduce
 
@@ -13,8 +13,18 @@ npx tsgo -b  # fails
 
 ## Error
 
-```
-packages/package-a/src/index.ts(4,10): error TS2742: The inferred type of 'thing' cannot be named without a reference to '../../package-b/node_modules/package-c/out'. This is likely not portable. A type annotation is necessary.
+```bash
+$ bun run tsgo -b
+packages/package-a/src/index.ts:4:10 - error TS2742: The inferred type of 'thing' cannot be named without a reference to '../../package-b/node_modules/package-c/out'. This is likely not portable. A type annotation is necessary.
+
+4   public thing = createThing({ id: "1", name: "test", enabled: true });
+           ~~~~~
+
+
+Found 1 error in packages/package-a/src/index.ts:4
+
+error: "tsgo" exited with code 2
+
 ```
 
 ## Setup
